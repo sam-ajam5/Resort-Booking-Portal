@@ -6,4 +6,6 @@ dotnetapp/WeatherForecast.cs
 dotnetapp/obj
 dotnetapp/bin
 
+Resort-Booking-Portal.sln
+
 # command to restore a git commit: git restore --source=<hash> dotnetapp
