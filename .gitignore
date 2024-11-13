@@ -1,0 +1,9 @@
+dotnetapp/Migrations
+
+README.md
+dotnetapp/WeatherForecast.cs
+
+dotnetapp/obj
+dotnetapp/bin
+
+# command to restore a git commit: git restore --source=<hash> dotnetapp
