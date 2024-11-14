@@ -1,0 +1,22 @@
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+    border: 2px solid #ddd; /* Add this line */
+    border-radius: 5px; /* Add this line */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add this line */
+}
+
+.title {
+    color: rgb(167, 46, 46);
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.content {
+    font-style: italic;
+    line-height: 1.6;
+    color: #333;
+}

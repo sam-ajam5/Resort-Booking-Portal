@@ -1,0 +1,33 @@
+<h1 class="text-center">Resort Booking Details </h1><br>
+<table class="table table-bordered">
+    <thead>
+        <tr class="align-middle">
+            <th class="text-center">S.No</th>
+            <th class="text-center">User Name</th>
+            <th class="text-center">Resort Name</th>
+            <th class="text-center">Number Of Persons</th>
+            <th class="text-center">From Date</th>
+            <th class="text-center">To Date</th>
+            <!-- <th class="text-center">Price </th> -->
+            <th class="text-center">Address </th>
+            <th class="text-center">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let m of booking">
+          <td class="text-center">{{ m.User.UserId }}</td>
+          <td class="text-center">{{ m.User.UserName }}</td>
+          <td class="text-center">{{ m.Resort.ResortName }}</td>
+          <td class="text-center">{{ m.NoOfPersons }}</td>
+          <td class="text-center">{{ m.FromDate | date:'dd-MM-yyyy' }}</td>
+          <td class="text-center">{{ m.ToDate | date:'dd-MM-yyyy' }}</td>
+          <!-- <td class="text-center">{{ m.TotalPrice }}</td> -->
+          <td class="text-center">{{ m.Address }}</td>
+          <td class="text-center">{{ m.Status }}</td>
+          <td class="text-center">
+            <button (click)="accept(m.BookingId)" class="btn btn-primary">Accept</button>
+            <button (click)="reject(m.BookingId)" class="btn btn-danger">Reject</button>
+          </td>
+        </tr>
+      </tbody>
+</table>

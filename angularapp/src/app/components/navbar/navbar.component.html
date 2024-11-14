@@ -1,0 +1,82 @@
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Resort Booking Portal</a>
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav ms-auto">
+          <ng-container *ngIf="isLoggedIn()" >
+          <li class="nav-item">
+          <a class ="nav-link" href="/home">{{username}}/{{userrole}}</a>
+          </li>
+          </ng-container>
+       
+        <li class="nav-item">
+          <a class="nav-link" href="/home">Home</a>
+        </li>
+        <!-- Conditionally show links based on login status -->
+        <ng-container *ngIf="!isLoggedIn()">
+          <li class="nav-item">
+            <a class="nav-link"  href="/register">Register</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/login">Login</a>
+          </li>
+        </ng-container>
+        <!-- Admin Links -->
+        <ng-container *ngIf="getRole() === 'Admin'">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Resorts
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li><a class="dropdown-item" routerLink="/addresort">Add Resort</a></li>
+              <li><a class="dropdown-item" routerLink="/adminviewresort">View Resort</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/adminviewbooking">View Bookings</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/adminviewreview">View Reviews</a>
+          </li>
+        </ng-container>
+        <!-- Customer Links -->
+        <ng-container *ngIf="getRole() === 'Customer'">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/customerviewresort">Resorts</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/customerviewbooking">View Bookings</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="reviewDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Review
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="reviewDropdown">
+              <li><a class="dropdown-item" routerLink="/addreview">Add Review</a></li>
+              <li><a class="dropdown-item" routerLink="/viewreview">View Review</a></li>
+            </ul>
+          </li>
+        </ng-container>
+        <ng-container *ngIf="isLoggedIn()">
+          <li class="nav-item">
+            <a class="nav-link" href="javascript:void(0);" (click)="openDialog()">Logout</a>
+          </li>
+        </ng-container>
+      </ul>
+    </div>
+  </div>
+</nav>
+ 
+<!-- Popup for logout -->
+<div id="logoutModal" class="modal" style="display:none;">
+  <div class="modal-content">
+    <p>Are you sure you want to logout?</p>
+    <div class="d-flex justify-content-center align-items-center">
+      <button class="btn btn-success" (click)="logout()">Yes, Logout</button>
+      <button class="btn btn-secondary m-2" (click)="closeDialog()">Close</button>
+    </div>
+  </div>
+</div>
+ 
+

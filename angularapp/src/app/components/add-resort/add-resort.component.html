@@ -1,0 +1,62 @@
+ <h3>Add New Resort</h3>
+
+<form class="col-md-4 container" (ngSubmit)="addNewResort()">
+    <h2 class="text-center"><b>Add New Resort</b></h2>
+    <br>
+
+    <div class="form-group required">
+        <label><b>Resort Name<span class="text-danger">*</span></b></label>
+        <input class="form-control" id="ResortName" name="ResortName" required type="name"/>
+    </div>
+
+    <div class="form-group required">
+        <label><b>Resort Image<span class="text-danger">*</span></b></label>
+       
+        <input class="form-control" type="file" id="image" name="image" accept="image/png, image/jpeg" />
+    </div>
+
+    <div class="form-group required">
+        <label><b>Resort Location<span class="text-danger">*</span></b></label>
+        <input class="form-control" id="id_password1" name="password1" #ResortLocRef= "ngModel" [(ngModel)]="newResort.ResortLocation" [ngModelOptions]="{standalone: true}"  required  >
+        <div *ngIf = "ResortLocRef.invalid && (ResortLocRef.dirty || ResortLocRef.touched )" class="text-danger">Resort Location is Required</div>
+    </div>
+
+    <div class="form-group required">
+        <label><b>Resort Description<span class="text-danger">*</span></b></label>
+        <input class="form-control" id="id_password2" name="password2" #ResortDescRef = "ngModel" [(ngModel)]="newResort.Description"  [ngModelOptions]="{standalone: true}"  required>
+        <div *ngIf = "ResortDescRef.invalid && (ResortDescRef.dirty || ResortDescRef.touched )" class="text-danger">Resort Description is Required</div>
+        <textarea class="form-control" id="id_password2" name="password2" required></textarea>
+    </div>
+
+    <div class="form-group required">
+        <label><b>Resort Available Status<span class="text-danger">*</span></b></label>
+        <select class="form-control dropdown-toggle" >
+            <option selected>Select available</option>
+            <option value="1">Available</option>
+            <option value="2">Not available</option>
+        </select>
+    </div>
+
+    <div class="form-group required">
+        <label><b>Price<span class="text-danger">*</span></b></label>
+        <input class="form-control" id="id_first_name" maxlength="30" name="first_name" required title="" type="number" />
+    </div>
+
+    <div class="form-group required">
+        <label><b>Capacity<span class="text-danger">*</span></b></label>
+        <input class="form-control" id="id_first_name" maxlength="30" name="first_name" required title="" type="number" #ResortCapRef = "ngModel" [(ngModel)]="newResort.Capacity" [ngModelOptions]="{ standalone: true }"/>
+        <div *ngIf = "ResortCapRef.invalid && (ResortCapRef.dirty || ResortCapRef.touched )" class="text-danger">Resort Capacity is Required</div>
+        <input class="form-control" id="id_first_name" maxlength="30" name="first_name" required title="" type="number" />
+    </div>
+
+    <br>
+    <button type="submit" class="form-control text-white" style="background-color: rgb(220, 46, 72);">Add Resort</button>
+
+    <br>
+    <br>
+    <br>
+<<<<<<< HEAD
+</form> -->
+=======
+</form> 
+>>>>>>> 910cb26193e7cd43e4f32bc5005b6c4fb2623758
