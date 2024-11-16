@@ -1,0 +1,32 @@
+<h1 class="text-center">Resort Booking Details </h1><br>
+<table class="table table-bordered">
+    <thead>
+        <tr class="align-middle">
+            <th class="text-center">S.NO</th>
+            <th class="text-center">Resort Name</th>
+            <th class="text-center">Address </th>
+            <th class="text-center">Number Of Persons</th>
+            <th class="text-center">From Date</th>
+            <th class="text-center">To Date</th>
+            <th class="text-center">Price </th>
+            <th class="text-center">Status</th>
+            <th class="text-center">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let m of book">
+            <td class="text-center">{{m.ResortId}}</td>
+            <td class="text-center">{{m.resort.ResortName}}</td>
+            <td class="text-center">{{m.Address}}</td>
+            <td class="text-center">{{m.NoOfPersons}}</td>
+            <td class="text-center">{{m.FromDate}}</td>
+            <td class="text-center">{{m.ToDate}}</td>
+            <td class="text-center">{{m.Price}}</td>
+            <td class="text-center">{{m.ResortAvailableStatus}}</td>
+            <td class="text-center">
+                 <button (click)="delete(m.UserId)" class ="btn btn-danger">Delete </button>
+              </td>
+
+        </tr>
+    </tbody>
+</table>

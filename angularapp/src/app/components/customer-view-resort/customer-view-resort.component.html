@@ -1,0 +1,36 @@
+<h3 class="text-center" style="color: rgb(220, 46, 72);"><b><i>Resort Details</i></b></h3>
+<table class="table table-bordered align-middle">
+    <thead>
+        <tr class="align-middle">
+            <th class="text-center">S.No</th>
+            <th class="text-center">Resort Name</th>
+            <th class="text-center col-3">Resort Description</th>
+            <th class="text-center col-2">Resort Image</th>
+            <th class="text-center col-1">Resort Available Status</th>
+            <th class="text-center">Resort Location</th>
+            <th class="text-center">Capacity</th>
+            <th class="text-center">Price</th>
+            <th class="text-center">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let r of resorts">
+            <td class="text-center">{{r.ResortId}}</td>
+            <td class="text-center">{{r.ResortName}}</td>
+            <td class="text-center">{{r.Description}}</td>
+            <td><img src="https://assets.architecturaldigest.in/photos/600847c388d5cb634511edfe/16:9/w_1920,c_limit/resorts-mumbai-long-weekend-featured-image-1366x768.jpg" width="200" height="100"></td>
+            <td class="text-center">{{r.ResortAvailableStatus}}</td>
+            <td class="text-center">{{r.ResortLocation}}</td>
+            <td class="text-center">{{r.Capacity}}</td>
+            <td class="text-center">{{r.Price}}</td>
+            <td class="text-center">
+                <a [routerLink]="['/addbooking', r.ResortId]" class="btn btn-primary">Book</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>

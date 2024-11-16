@@ -1,0 +1,73 @@
+
+<h2 class="text-center"><b>Add Booking Details</b></h2><br>``
+<form  class="form-container" (ngSubmit)="addBooking()">
+    <div class = "form-group">
+        <label><b>Resort Name<span class="text-danger">*</span></b></label>
+        <input name = "ResortName" id="ResortName" value = {{existingResort.ResortName}}  class="form-control" disabled>
+    </div>
+    <div class = "form-group">
+        <label><b>Total Price<span class="text-danger">*</span></b></label>
+        <input name = "TotalPrice" id="TotalPrice" value = {{newBooking.TotalPrice}} class="form-control" disabled>
+    </div>
+    <div class = "form-group">
+        <label><b>Resort Location<span class="text-danger">*</span></b></label>
+        <input name = "ResortLocation" id="ResortLocation" value = {{existingResort.ResortLocation}}  class="form-control" disabled>
+    </div>
+    <div class = "form-group">
+        <label><b>Resort Capacity<span class="text-danger">*</span></b></label>
+        <input name = "Capacity" id="Capacity" value = {{existingResort.Capacity}}  class="form-control" disabled>
+    </div>
+    <div class = "form-group">
+        <label><b>Your Address<span class="text-danger">*</span></b></label>
+        <input name = "Address" id="Address"  [(ngModel)] = "newBooking.Address" class="form-control">
+    </div>
+    <div class = "form-group">
+        <label><b>Number of Persons<span class="text-danger">*</span></b> </label>
+        <input name = "NoOfPersons" id="NoOfPersons" [(ngModel)] = "newBooking.NoOfPersons"   class="form-control">
+    </div>
+    <div class = "form-group">
+        <label><b>From Date<span class="text-danger">*</span></b></label>
+        <input  type ="date" name = "FromDate" id="FromDate"[(ngModel)] = "newBooking.FromDate"  class="form-control">
+    </div>
+    <div class = "form-group">
+        <label><b>To Date<span class="text-danger">*</span> </b></label>
+        <input  type ="date" name = "ToDate" id="ToDate" [(ngModel)] = "newBooking.ToDate"  class="form-control">
+    </div>
+    <br>
+    <div class="d-flex justify-content-center align-items-center">
+        <button type = "submit" (click)="openDialog()"  style="background-color: rgb(220, 46, 72);" class = "text-white form-control">Make Payment</button>
+    </div>
+    <button  type = "submit" style="background-color: rgb(220, 46, 72);" class ="text-white form-control y-2">Cancel</button>
+</form>
+
+<div id="paymentModal" class="modal">
+<<<<<<< HEAD
+<div class="modal-content">
+<h2>Confirm Payment</h2>
+<p>Are you sure you want to proceed with the payment?</p>
+<div class="d-flex justify-content-center align-items-center">
+<button class="btn btn-success" (click)="openDialog2()">Confirm</button>
+<button class="btn btn-secondary" (click)="closeDialog()">Close</button>
+</div>
+
+=======
+    <div class="modal-content">
+        <h2>Confirm Payment</h2>
+        <p>Are you sure you want to proceed with the payment?</p>
+        <div class="d-flex justify-content-center align-items-center">
+        <button class="btn btn-success" (click)="openDialog2()">Confirm</button>
+        <button class="btn btn-secondary" (click)="closeDialog()">Close</button>
+    </div>
+>>>>>>> 910cb26193e7cd43e4f32bc5005b6c4fb2623758
+</div>
+ 
+<div id="finalpage" class="modal">
+    <div class="modal-content">
+        <p>Payment was successful!</p>
+        <div class="d-flex justify-content-center align-items-center">
+        <button class="btn btn-success" (click)="closeDialog()">Close</button>
+    </div>
+</div>
+<br>
+<br>
+<br>

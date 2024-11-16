@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <link rel="stylesheet" href="login.component.css"> <!-- Include your actual stylesheet path -->
+</head>
+<body>
+  <div class="login-container">
+    <div class="login-box">
+      <h2>Login</h2>
+      <form (ngSubmit)="Login()" class="needs-validation" novalidate>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" [(ngModel)]="newLogin.Email" name="email" class="form-control"
+                 required #emailInput="ngModel" [ngClass]="{'is-invalid': emailInput.invalid && (emailInput.dirty || emailInput.touched)}">
+          <div class="invalid-feedback">Please provide a valid email address.</div>
+        </div>
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input type="password" id="password" [(ngModel)]="newLogin.Password" name="password" class="form-control"
+                 required #passwordInput="ngModel" [ngClass]="{'is-invalid': passwordInput.invalid && (passwordInput.dirty || passwordInput.touched)}">
+          <div class="invalid-feedback">Please enter your password.</div>
+        </div>
+        <button type="submit" class="btn btn-primary">Login</button>
+      </form>
+      <p class="text-center">Not registered? <a routerLink="/register">Please register</a></p>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<h2 class="text-center"><b>Reviews</b></h2>
+<br>
+<table class="table table-bordered">
+  <thead>
+    <tr class="align-middle text-center">
+      <th>S.No</th>
+      <th>Resort Name</th>
+      <th>Feedback Comments</th>
+      <th>Rating (out of 5)</th>
+      <th>Date Created</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let reviewItem of review" class="align-middle text-center">
+      <td>{{ reviewItem.ReviewId }}</td>
+      <td>{{ reviewItem.ResortName }}</td>
+      <td>{{ reviewItem.Body }}</td>
+      <td>{{ reviewItem.Rating }}</td>
+      <td>{{ reviewItem.DateCreated | date:'dd/MM/yyyy' }}</td>
+    </tr>
+  </tbody>
+</table>

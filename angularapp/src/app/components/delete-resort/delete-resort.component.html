@@ -1,0 +1,13 @@
+<!-- delete-resort.component.html -->
+<div class="delete-resort">
+    <h2>Delete Resort</h2>
+    <p>Are you sure you want to delete the following resort?</p>
+    <div class="resort-details">
+      <p><strong>Resort ID:</strong> {{ resortDetails.ResortId }}</p>
+      <p><strong>Name:</strong> {{ resortDetails.ResortName }}</p>
+      <p><strong>Location:</strong> {{ resortDetails.ResortLocation }}</p>
+      <!-- Add other relevant details here -->
+    </div>
+    <button (click)="deleteResort()">Delete</button>
+  </div>
+  
